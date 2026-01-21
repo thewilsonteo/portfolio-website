@@ -1,0 +1,20 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", // This covers all files in your src folder
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Custom branding colors
+        primary: "#3b82f6", // Blue-600
+        dark: "#0f172a",    // Slate-900
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], // Professional, clean font
+      },
+    },
+  },
+  plugins: [],
+}
