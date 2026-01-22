@@ -1,7 +1,70 @@
 // Projects.jsx
+const web_mobile_apps = [
+  { 
+    title: "KRTC",
+    tags: ["Angular", "Node.js", "MySQL"],
+    type: "Web/Mobile", 
+    desc: "A Singapore-based tuition and education centre operating numerous branches nationwide. The project consists of three components: <b>1. CMS Website:</b> Used by HQ staff to oversee centre managers, who in turn manage their tutors and students. 2. Tutor app: Allows tutors to manage their class timetables and take attendance. 3. Parent App: Enables parents to view class schedules and attendance records of their children.",
+    link: "",
+  },
+  {   
+    title: "CPA",
+    tags: ["Angular", "Node.js", "MySQL"],
+    type: "Web/Mobile",
+    desc: "1. Books by CPA: A mobile bookkeeping application designed for customers to track their expenses. The app includes a feature allowing users to scan receipts using the phone camera, creating income and expenses. 2. CMS website: A web portal for staff and administrators to manage and monitor customer records.",
+    link: "",
+  }
+];
+const websites = [
+  {
+    title: "Nan Hua Chang Seafood",
+    tags: ["Wordpress", "Elementor"],
+    desc: "A website project for a restaurant specialising traditional charcoal-grilled seafood.",
+    link: "https://nanhuachang.sg/",
+  },
+  {
+    title: "The Teochew Kitchenette",
+    tags: ["Wordpress", "Elementor"],
+    desc: "A website for a Teochew fish soup restaurant",
+    link: "https://teochewkitchenette.com/",
+  },
+  {
+    title: "stats.sg",
+    tags: ["Wordpress", "Elementor", "PHP"],
+    desc: "A website dedicated to displaying information visually through infographics.",
+    link: "https://stats.sg/",
+  },
+  {
+    title: "SG Drinking",
+    tags: ["Wordpress", "Elementor", "PHP"],
+    desc: "A database of bars and nightclubs in Singapore.",
+    link: "https://sgdrinking.com/",
+  },
+  {
+    title: "Alvion Trade",
+    tags: ["Wordpress", "Elementor", "PHP"],
+    desc: "A company specialising airline supply industry website displaying products and solutions",
+    link: "https://alviontrade.com/",
+  },
+  {
+    title: "QooMedia",
+    tags: ["Wordpress", "Elementor"],
+    desc: "A website for a business consultancy firm in website design and development, search engine optimisation (SEO), and online advertising.",
+    link: "https://qoo.media/",
+  },
+]
 const projects = [
-  { title: "FinTech App", type: "Mobile", desc: "A React Native investment tracker." },
-  { title: "E-shop CMS", type: "Web", desc: "Full-stack dashboard with Next.js." }
+  { 
+    title: "FinTech App",
+    type: "Mobile", 
+    desc: "A React Native investment tracker.",
+    link: "",
+  },
+  { 
+    title: "E-shop CMS",
+    type: "Web",
+    desc: "Full-stack dashboard with Next.js."
+  }
 ];
 
 export default function Projects() {
@@ -10,7 +73,7 @@ export default function Projects() {
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold mb-12">Featured Projects</h2>
         <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((proj) => (
+          {web_mobile_apps.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
               <div className="h-48 bg-gray-200"></div> {/* Placeholder for Image */}
               <div className="p-6">

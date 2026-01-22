@@ -17,7 +17,8 @@ function App() {
         <Contact />
       </main>
       <footer className="py-8 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} Your Name. Built with React & Tailwind.
+        © {new Date().getFullYear()} Wilson Teo. Built with React & Tailwind.
+        Photo by <a href="https://unsplash.com/@benkolde?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ben Kolde</a> on <a href="https://unsplash.com/photos/person-holding-space-gray-iphone-6-displaying-i-design-and-develop-experiences-that-make-peoples-lives-simple-text-Ajcipx1VDXI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </footer>
     </div>
   );

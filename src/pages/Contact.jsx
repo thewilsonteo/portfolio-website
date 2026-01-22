@@ -1,4 +1,14 @@
 // Contact.jsx
+
+const contacts = [
+  {
+    "email": "thewilsonteo@gmail.com"
+  },
+  {
+    "github": "thewilsonteo"
+  },
+]
+
 export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-gray-900 text-white">
