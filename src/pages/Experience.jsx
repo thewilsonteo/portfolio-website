@@ -1,6 +1,6 @@
-// Experience.jsx/
+// Experience.jsx
 import { Briefcase } from 'lucide-react';
-// import { Formatter } from '../components/Formatter.jsx';
+import TextFormatter from '../components/TextFormatter.jsx';
 
 const skillCategories = [
   { title: "Frontend", 
@@ -15,13 +15,14 @@ const skillCategories = [
       {name: "Bootstrap",   icon: <img src={"src/assets/bootstrap.svg"} className="w-8 h-8" /> },
       {name: "Ionic",   icon: <img src={"src/assets/ionic-icon.svg"} className="w-8 h-8" /> },
       {name: "Tailwind",    icon: <img src={"src/assets/tailwindcss-icon.svg"} className="w-8 h-8" /> },
+      {name: "Elementor"},
     ]
   },
   { title: "Backend", 
     skills: [
-      {name: "Node.js", icon: <img src={"src/assets/angular-icon.svg"} className="w-8 h-8" /> },
+      {name: "Node.js", icon: <img src={"src/assets/nodejs-icon.svg"} className="w-8 h-8" /> },
       {name: "PHP",     icon: <img src={"src/assets/php-alt.svg"} className="w-8 h-8" /> },
-      {name: "MySQL",   icon: <img src={"src/assets/nodejs-icon.svg"} className="w-8 h-8" /> },
+      {name: "MySQL",   icon: <img src={"src/assets/mysql-icon.svg"} className="w-8 h-8" /> },
       {name: "Python",  icon: <img src={"src/assets/python.svg"} className="w-8 h-8" /> },
       {name: "NGINX",   icon: <img src={"src/assets/nginx.svg"} className="w-8 h-8" /> },
     ],
@@ -42,8 +43,8 @@ const skillCategories = [
   { title: "Languages", 
     skills: [
       {name: "English"},
-      {name: "Mandarin Chinese"},
-      {name: "Japanese (JLPT N2 Certified)"}
+      {name: "中文"},
+      {name: "日本語"}
     ]
    }
 ];
@@ -52,14 +53,24 @@ const timeline = [
   {
     role: "Full Stack Developer",
     company: "Ceesolution Pte. Ltd.",
-    period: "Feb 2023 - Sep 2024 · 1 yr 8 mos",
-    desc: "Built with **React 19** and **Tailwind CSS v4** for maximum speed."
+    period: "2023 - 2024",
+    desc: [
+        "Collaborate with product managers, developers, and stakeholders in the requirement-gathering phase, as well as with cross-functional teams for effective development and timely project completion to deliver high-quality software products.",
+        "Test, deploy, and debug software programs and systems. Run performance tests and debug issues in existing software while maintaining data privacy practices.",
+        "Design frontend and backend architectures, including user interface design and API design. Generate technical documentation, prototypes, and wireframes while keeping up to date with design trends and ensuring developed and delivered solutions are user-centered."
+    ],
   },
   {
-    role: "Full Stack Engineer",
-    company: "CloudScale Inc.",
+    role: "Web Designer",
+    company: "SkipQoo",
     period: "2021 - 2023",
-    desc: "Developed and maintained scalable APIs and responsive user interfaces for a high-traffic B2B platform."
+    desc: [
+      "Integrated systems such as ERP and API request for several businesses.",
+      "Assisting in designing and implementing new features and functionality for marketing websites.",
+      "Building user interfaces and ensuring high performance of websites.",
+      "Maintaining quality service by establishing and enforcing organisation standards.",
+      "Preserved marketing arms with reputable followings by producing deliverables at a consistent rate.",
+    ],
   }
 ];
 
@@ -84,10 +95,13 @@ export default function Experience() {
                     key={skill.name} 
                     className="flex flex-col items-center p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all border border-transparent hover:border-gray-100 group"
                   >
-                    <div className="mb-4 p-3 bg-white rounded-xl shadow-sm group-hover:scale-110 transition-transform">
-                      {/* Icon sits directly above title */}
-                      {skill.icon}
-                    </div>
+                    {/* This is the React version of *ngIf */}
+                    {skill.icon && (
+                      <div className="mb-4 p-3 bg-white rounded-xl shadow-sm group-hover:scale-110 transition-transform">
+                        {/* Icon sits directly above title */}
+                        {skill.icon}
+                      </div>
+                    )}
                     <span className="font-medium text-gray-700">{skill.name}</span>
                   </div>
                 ))}
@@ -96,8 +110,7 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* Timeline remains the same as previous step below this section... */}
-        2. Professional Timeline
+        {/* Professional Timeline */}
         <div className="max-w-3xl mx-auto">
           <h3 className="text-2xl font-bold mb-10 flex items-center gap-3">
             <Briefcase className="text-blue-600" /> Career Path
@@ -118,7 +131,7 @@ export default function Experience() {
                   </div>
                   <div className="text-sm font-medium text-slate-500 mb-2">{job.company}</div>
                   <div className="text-slate-600 text-sm leading-relaxed">
-                    {job.desc}{/* <Formatter content={job.desc} /> */}
+                    <TextFormatter content={job.desc} />
                   </div>
                 </div>
               </div>

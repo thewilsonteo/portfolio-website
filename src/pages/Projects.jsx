@@ -1,20 +1,33 @@
 // Projects.jsx
+import TextFormatter from '../components/TextFormatter.jsx';
+
 const web_mobile_apps = [
   { 
     title: "KRTC",
     tags: ["Angular", "Node.js", "MySQL"],
     type: "Web/Mobile", 
-    desc: "A Singapore-based tuition and education centre operating numerous branches nationwide. The project consists of three components: <b>1. CMS Website:</b> Used by HQ staff to oversee centre managers, who in turn manage their tutors and students. 2. Tutor app: Allows tutors to manage their class timetables and take attendance. 3. Parent App: Enables parents to view class schedules and attendance records of their children.",
+    desc: {
+      intro: "A Singapore-based tuition and education centre operating numerous branches nationwide. The project consists of three components:",
+      points: [
+        "**CMS Website**: Used by HQ staff to oversee centre managers, who in turn manage their tutors and students.",
+        "**Tutor App**: Allows tutors to manage their class timetables and take attendance.",
+        "**Parent App**: Enables parents to view class schedules and attendance records of their children.",
+      ],
+    },
     link: "",
   },
   {   
     title: "CPA",
     tags: ["Angular", "Node.js", "MySQL"],
     type: "Web/Mobile",
-    desc: "1. Books by CPA: A mobile bookkeeping application designed for customers to track their expenses. The app includes a feature allowing users to scan receipts using the phone camera, creating income and expenses. 2. CMS website: A web portal for staff and administrators to manage and monitor customer records.",
+    desc: [
+      "**Customer App**: Books by CPA, a mobile bookkeeping application designed for customers to track their expenses. The app includes a feature allowing users to scan receipts using the phone camera, creating income and expenses.",
+      "**CMS website**: A web portal for staff and administrators to manage and monitor customer records.",
+    ],
     link: "",
   }
 ];
+
 const websites = [
   {
     title: "Nan Hua Chang Seafood",
@@ -25,7 +38,7 @@ const websites = [
   {
     title: "The Teochew Kitchenette",
     tags: ["Wordpress", "Elementor"],
-    desc: "A website for a Teochew fish soup restaurant",
+    desc: "A website for a Teochew fish soup restaurant.",
     link: "https://teochewkitchenette.com/",
   },
   {
@@ -71,7 +84,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12">Featured Projects</h2>
+        <h2 className="text-3xl font-bold mb-12">Projects</h2>
         <div className="grid md:grid-cols-2 gap-10">
           {web_mobile_apps.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
@@ -79,7 +92,31 @@ export default function Projects() {
               <div className="p-6">
                 <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
                 <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
-                <p className="text-gray-600 mt-2">{proj.desc}</p>
+
+                  <TextFormatter content={proj.desc} />
+                <p className="text-gray-600 mt-2">
+                  {/* {proj.desc} */}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 mt-12">
+        <h2 className="text-3xl font-bold mb-12">Websites</h2>
+        <div className="grid md:grid-cols-3 gap-10">
+          {websites.map((proj) => (
+            <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
+              <div className="h-48 bg-gray-200"></div> {/* Placeholder for Image */}
+              <div className="p-6">
+                <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
+                <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
+
+                  <TextFormatter content={proj.desc} />
+                <p className="text-gray-600 mt-2">
+                  {/* {proj.desc} */}
+                </p>
               </div>
             </div>
           ))}
