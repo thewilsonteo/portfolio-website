@@ -1,5 +1,6 @@
 // Projects.jsx
 import TextFormatter from '../components/TextFormatter.jsx';
+import { ExternalLink, Github } from 'lucide-react';
 
 const web_mobile_apps = [
   { 
@@ -14,7 +15,7 @@ const web_mobile_apps = [
         "**Parent App**: Enables parents to view class schedules and attendance records of their children.",
       ],
     },
-    link: "",
+    link: "https://play.google.com/store/apps/details?id=io.qzt.krtc&hl=en_SG",
   },
   {   
     title: "CPA",
@@ -33,52 +34,45 @@ const websites = [
     title: "Nan Hua Chang Seafood",
     tags: ["Wordpress", "Elementor"],
     desc: "A website project for a restaurant specialising traditional charcoal-grilled seafood.",
-    link: "https://nanhuachang.sg/",
+    image: "nan-hua-chang-seafood.png",
+    links: {live: "https://nanhuachang.sg/"},
   },
   {
     title: "The Teochew Kitchenette",
     tags: ["Wordpress", "Elementor"],
     desc: "A website for a Teochew fish soup restaurant.",
-    link: "https://teochewkitchenette.com/",
+    image: "the-teochew-kitchenette.png",
+    links: {live: "https://teochewkitchenette.com/"},
   },
   {
     title: "stats.sg",
     tags: ["Wordpress", "Elementor", "PHP"],
     desc: "A website dedicated to displaying information visually through infographics.",
-    link: "https://stats.sg/",
+    image: "",
+    links: {live: "https://stats.sg/"},
   },
   {
     title: "SG Drinking",
     tags: ["Wordpress", "Elementor", "PHP"],
     desc: "A database of bars and nightclubs in Singapore.",
-    link: "https://sgdrinking.com/",
+    image: "sg-drinking.png",
+    links: {live: "https://sgdrinking.com/"},
   },
   {
     title: "Alvion Trade",
     tags: ["Wordpress", "Elementor", "PHP"],
-    desc: "A company specialising airline supply industry website displaying products and solutions",
-    link: "https://alviontrade.com/",
+    desc: "A company specialising airline supply industry website displaying products and solutions.",
+    image: "alvion-trade.png",
+    links: {live: "https://alviontrade.com/"},
   },
   {
     title: "QooMedia",
     tags: ["Wordpress", "Elementor"],
     desc: "A website for a business consultancy firm in website design and development, search engine optimisation (SEO), and online advertising.",
-    link: "https://qoo.media/",
+    image: "qoomedia.png",
+    links: {live: "https://qoo.media/"},
   },
 ]
-const projects = [
-  { 
-    title: "FinTech App",
-    type: "Mobile", 
-    desc: "A React Native investment tracker.",
-    link: "",
-  },
-  { 
-    title: "E-shop CMS",
-    type: "Web",
-    desc: "Full-stack dashboard with Next.js."
-  }
-];
 
 export default function Projects() {
   return (
@@ -92,11 +86,21 @@ export default function Projects() {
               <div className="p-6">
                 <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
                 <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
-
-                  <TextFormatter content={proj.desc} />
+                {/* Tech Badges Section */}
+                <TextFormatter content={proj.desc} />
                 <p className="text-gray-600 mt-2">
                   {/* {proj.desc} */}
                 </p>
+                <div className="flex flex-wrap gap-2 mt-3 mb-4">
+                  {proj.tags?.map((badge) => (
+                    <span 
+                      key={badge} 
+                      className="px-3 py-1 text-xs font-semibold bg-blue-50 text-blue-600 rounded-full border border-blue-100 uppercase tracking-wide"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -105,19 +109,46 @@ export default function Projects() {
 
       <div className="container mx-auto px-6 mt-12">
         <h2 className="text-3xl font-bold mb-12">Websites</h2>
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
           {websites.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
-              <div className="h-48 bg-gray-200"></div> {/* Placeholder for Image */}
-              <div className="p-6">
-                <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
-                <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
-
+                {/* Image Container in Projects.jsx */}
+                <div className="relative h-48 w-full bg-gray-50 border-b border-gray-100 overflow-hidden">
+                  <img 
+                    src={`src/assets/${proj.image}`} 
+                    alt={proj.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
+                  <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
                   <TextFormatter content={proj.desc} />
-                <p className="text-gray-600 mt-2">
-                  {/* {proj.desc} */}
-                </p>
-              </div>
+                  {/* Action Links */}
+                  <div className="flex gap-6 pt-6">
+                    {proj.links.github && (
+                    <a href={proj.links.github} className="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium">
+                      <Github size={20} /> Code
+                    </a> )}
+                    {proj.links.live && (
+                      <a href={proj.links.live} className="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium">
+                        <ExternalLink size={20} /> Live Demo
+                      </a>
+                    )}
+                  </div>
+
+                  {/* Tech Badges Section */}
+                  <div className="flex flex-wrap gap-2 mt-3 mb-4">
+                    {proj.tags?.map((badge) => (
+                      <span 
+                        key={badge} 
+                        className="px-3 py-1 text-xs font-semibold bg-blue-50 text-blue-600 rounded-full border border-blue-100 uppercase tracking-wide"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                </div>
             </div>
           ))}
         </div>
