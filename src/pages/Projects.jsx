@@ -6,6 +6,7 @@ const web_mobile_apps = [
   { 
     title: "KRTC",
     tags: ["Angular", "Node.js", "MySQL"],
+    image: "krtc-mockup.png",
     type: "Web/Mobile", 
     desc: {
       intro: "A Singapore-based tuition and education centre operating numerous branches nationwide. The project consists of three components:",
@@ -20,6 +21,7 @@ const web_mobile_apps = [
   {   
     title: "CPA",
     tags: ["Angular", "Node.js", "MySQL"],
+    image: "cpa-mockup.png",
     type: "Web/Mobile",
     desc: [
       "**Customer App**: Books by CPA, a mobile bookkeeping application designed for customers to track their expenses. The app includes a feature allowing users to scan receipts using the phone camera, creating income and expenses.",
@@ -82,7 +84,13 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 gap-10">
           {web_mobile_apps.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
-              <div className="h-48 bg-gray-200"></div> {/* Placeholder for Image */}
+              <div className="h-48 bg-gray-200">
+                <img 
+                  src={`src/assets/${proj.image}`}
+                  alt={proj.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div> {/* Placeholder for Image */}
               <div className="p-6">
                 <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
                 <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
@@ -109,7 +117,7 @@ export default function Projects() {
 
       <div className="container mx-auto px-6 mt-12">
         <h2 className="text-3xl font-bold mb-12">Websites</h2>
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
           {websites.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
                 {/* Image Container in Projects.jsx */}
