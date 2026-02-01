@@ -1,4 +1,4 @@
-import profileImg from '.././assets/ben-kolde-Ajcipx1VDXI-unsplash.jpg'; // Import the image
+// import profileImg from 'ben-kolde-Ajcipx1VDXI-unsplash.jpg'; // Import the image
 
 export default function About() {
   return (
@@ -8,7 +8,7 @@ export default function About() {
           {/* Placeholder for a professional headshot */}
           <div className="w-64 h-64 bg-gray-200 rounded-2xl mx-auto shadow-inner">
             <img 
-              src={profileImg} 
+              src="./ben-kolde-Ajcipx1VDXI-unsplash.jpg"
               alt="Professional Headshot" 
               className="w-64 h-64 object-cover rounded-2xl shadow-xl border-4 border-gray-100 transition-transform hover:scale-105"
             />

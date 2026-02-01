@@ -101,7 +101,7 @@ export default function Experience() {
                     {skill.icon && (
                       <div className="mb-4 p-3 bg-white rounded-xl shadow-sm group-hover:scale-110 transition-transform">
                         {/* Icon sits directly above title */}
-                        <img src={`./src/assets/${skill.icon}`} className="w-8 h-8" />
+                        <img src={`./${skill.icon}`} className="w-8 h-8" />
                       </div>
                     )}
                     <span className="font-medium text-gray-700">{skill.name}</span>
@@ -126,7 +126,7 @@ export default function Experience() {
               <div className="absolute -left-4.5 md:-left-6 top-0 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white border border-gray-100 shadow-sm z-10 overflow-hidden">
                 {job.logo ? (
                   <img 
-                    src={`./src/assets/${job.logo}`} 
+                    src={`./${job.logo}`} 
                     alt={job.company} 
                     className="w-full h-full object-contain p-1" 
                   />
