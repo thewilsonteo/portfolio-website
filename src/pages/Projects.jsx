@@ -46,13 +46,13 @@ const websites = [
     image: "the-teochew-kitchenette.png",
     links: {live: "https://teochewkitchenette.com/"},
   },
-  {
-    title: "stats.sg",
-    tags: ["Wordpress", "Elementor", "PHP"],
-    desc: "A website dedicated to displaying information visually through infographics.",
-    image: "",
-    links: {live: "https://stats.sg/"},
-  },
+  // {
+  //   title: "stats.sg",
+  //   tags: ["Wordpress", "Elementor", "PHP"],
+  //   desc: "A website dedicated to displaying information visually through infographics.",
+  //   image: "",
+  //   links: {live: "https://stats.sg/"},
+  // },
   {
     title: "SG Drinking",
     tags: ["Wordpress", "Elementor", "PHP"],
@@ -86,7 +86,7 @@ export default function Projects() {
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
               <div className="h-48 bg-gray-200">
                 <img 
-                  src={`src/assets/${proj.image}`}
+                  src={`./src/assets/${proj.image}`}
                   alt={proj.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -123,7 +123,7 @@ export default function Projects() {
                 {/* Image Container in Projects.jsx */}
                 <div className="relative h-48 w-full bg-gray-50 border-b border-gray-100 overflow-hidden">
                   <img 
-                    src={`src/assets/${proj.image}`} 
+                    src={`./src/assets/${proj.image}`} 
                     alt={proj.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

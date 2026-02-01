@@ -1,4 +1,4 @@
-import profileImg from '../assets/ben-kolde-Ajcipx1VDXI-unsplash.jpg'; // Import the image
+import profileImg from '.././assets/ben-kolde-Ajcipx1VDXI-unsplash.jpg'; // Import the image
 
 export default function About() {
   return (
