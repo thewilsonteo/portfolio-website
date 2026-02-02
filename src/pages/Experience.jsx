@@ -79,7 +79,7 @@ const timeline = [
 const education = [
   {
     degree: "Bachelor of Science - BS, Digital Media",
-    school: "Singapore of Social Sciences",
+    school: "Singapore University of Social Sciences",
     logo: "./suss.svg",
     period: "2022 - 2026",
     // desc: [
