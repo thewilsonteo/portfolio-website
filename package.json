@@ -2,7 +2,7 @@
   "name": "portfolio-website",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://thewilsonteo.github.io",
+  "homepage": "https://thewilsonteo.github.io/portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
