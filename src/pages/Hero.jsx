@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div className="fixed inset-0 z-0">
           <img 
-            src="/azka-rayhansyah-DByY8MbE9OE-unsplash.jpg" 
+            src="./azka-rayhansyah-DByY8MbE9OE-unsplash.jpg" 
             alt="Background" 
             className="w-full h-full object-cover object-top"
           />
