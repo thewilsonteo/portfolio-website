@@ -15,11 +15,9 @@ export default function About() {
           </div>
         </div>
         <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            I am a software engineer with a passion for building clean, scalable applications. 
-            My journey began with web designing, followed by web programming, and app programming,
-            and today I specialize in modern web technologies that prioritize user experience.
+          <h2 className="text-3xl font-bold mb-4 text-center md:text-left">About Me</h2>
+          <p className="text-gray-600 leading-relaxed mb-4 text-justify">
+            As a passionate software engineer, I specialize in building clean, scalable applications, with a focus on modern web technologies that prioritize user experience. My background includes a comprehensive journey through web design, web programming, and mobile app programming, which has equipped me with a holistic perspective throughout my career.
           </p>
           {/* <p className="text-gray-600 leading-relaxed">
             When I'm not coding, you can find me eating, sleeping or contributing to 

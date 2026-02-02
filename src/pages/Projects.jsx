@@ -9,7 +9,7 @@ const web_mobile_apps = [
     image: "krtc-mockup.png",
     type: "Web/Mobile", 
     desc: {
-      intro: "A Singapore-based tuition and education centre operating numerous branches nationwide. The project consists of three components:",
+      intro: "A Singapore-based tuition and education centre operating numerous branches nationwide.",
       points: [
         "**CMS Website**: Used by HQ staff to oversee centre managers, who in turn manage their tutors and students.",
         "**Tutor App**: Allows tutors to manage their class timetables and take attendance.",
@@ -19,14 +19,17 @@ const web_mobile_apps = [
     link: "https://play.google.com/store/apps/details?id=io.qzt.krtc&hl=en_SG",
   },
   {   
-    title: "CPA",
+    title: "CPA Services",
     tags: ["Angular", "Node.js", "MySQL"],
     image: "cpa-mockup.png",
     type: "Web/Mobile",
-    desc: [
-      "**Customer App**: Books by CPA, a mobile bookkeeping application designed for customers to track their expenses. The app includes a feature allowing users to scan receipts using the phone camera, creating income and expenses.",
-      "**CMS website**: A web portal for staff and administrators to manage and monitor customer records.",
-    ],
+    desc: {
+      intro: "A Singapore-based provider specializing in accounting, tax, and corporate services for business owners.",
+      points: [
+        "**Customer App**: Books by CPA, a mobile bookkeeping application designed for customers to track their expenses. The app includes a feature allowing users to scan receipts using the phone camera, creating income and expenses.",
+        "**CMS website**: A web portal for staff and administrators to manage and monitor customer records.",
+      ],
+    },
     link: "",
   }
 ];
@@ -80,8 +83,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12">Projects</h2>
-        <div className="grid md:grid-cols-2 gap-10">
+        <h2 className="text-3xl font-bold mb-12 text-center md:text-left">Projects</h2>
+        <div className="grid xl:grid-cols-2 md:grid-cols-1 gap-10">
           {web_mobile_apps.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
               <div className="h-48 bg-gray-200">
@@ -94,12 +97,11 @@ export default function Projects() {
               <div className="p-6">
                 <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
                 <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
-                {/* Tech Badges Section */}
-                <TextFormatter content={proj.desc} />
-                <p className="text-gray-600 mt-2">
-                  {/* {proj.desc} */}
+                <p className="text-gray-600 text-justify">
+                  <TextFormatter content={proj.desc} />
                 </p>
-                <div className="flex flex-wrap gap-2 mt-3 mb-4">
+                {/* Tech Badges Section */}
+                <div className="flex flex-wrap gap-2 mt-5 mb-4">
                   {proj.tags?.map((badge) => (
                     <span 
                       key={badge} 
@@ -116,8 +118,8 @@ export default function Projects() {
       </div>
 
       <div className="container mx-auto px-6 mt-12">
-        <h2 className="text-3xl font-bold mb-12">Websites</h2>
-        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
+        <h2 className="text-3xl font-bold mb-12 text-center md:text-left">Websites</h2>
+        <div className="grid xl:grid-cols-3 md:grid-cols-1 gap-10">
           {websites.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
                 {/* Image Container in Projects.jsx */}
@@ -130,10 +132,12 @@ export default function Projects() {
                 </div>
                 <div className="p-6">
                   <span className="text-blue-600 text-sm font-semibold">{proj.type}</span>
-                  <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>
-                  <TextFormatter content={proj.desc} />
+                  <h3 className="text-2xl font-bold mt-2">{proj.title}</h3>                  
+                  <p className="text-gray-600 text-justify">
+                    <TextFormatter content={proj.desc} />
+                  </p>
                   {/* Action Links */}
-                  <div className="flex gap-6 pt-6">
+                  <div className="flex gap-6 pt-6 pb-4">
                     {proj.links.github && (
                     <a href={proj.links.github} className="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium">
                       <Github size={20} /> Code

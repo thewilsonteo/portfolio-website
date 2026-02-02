@@ -1,4 +1,4 @@
-Link: [https://thewilsonteo.github.io/portfolio-website/](https://thewilsonteo.github.io/portfolio-website/)
+Link: [https://thewilsonteo.github.io/](https://thewilsonteo.github.io/)
 
 # React + Vite
 

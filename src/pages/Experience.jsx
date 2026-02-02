@@ -150,7 +150,7 @@ export default function Experience() {
                   </div>
 
                   {/* Using our Formatter Component */}
-                  <div className="mt-4">
+                  <div className="mt-4 text-justify">
                     <TextFormatter content={job.desc} />
                   </div>
                 </div>
