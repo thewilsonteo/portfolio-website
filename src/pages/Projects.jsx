@@ -84,7 +84,7 @@ export default function Projects() {
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold mb-12 text-center md:text-left">Projects</h2>
-        <div className="grid xl:grid-cols-2 md:grid-cols-1 gap-10">
+        <div className="grid xl:grid-cols-2 lg:grid-cols-1 gap-10">
           {web_mobile_apps.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
               <div className="h-48 bg-gray-200">
@@ -119,7 +119,7 @@ export default function Projects() {
 
       <div className="container mx-auto px-6 mt-12">
         <h2 className="text-3xl font-bold mb-12 text-center md:text-left">Websites</h2>
-        <div className="grid xl:grid-cols-3 md:grid-cols-1 gap-10">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-1 gap-10">
           {websites.map((proj) => (
             <div key={proj.title} className="bg-white overflow-hidden rounded-lg shadow-lg">
                 {/* Image Container in Projects.jsx */}

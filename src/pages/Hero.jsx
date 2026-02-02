@@ -14,7 +14,7 @@ export default function Hero() {
           />
         </div>
         {/* The overlay is now inside the same clipping context */}
-        <div className="fixed inset-0 z-10 bg-slate-900/80 backdrop-blur-sm"></div>
+        <div className="fixed inset-0 z-10 bg-slate-900/80"></div>
       </div>
 
       {/* 2. The Content (Standard relative positioning) */}

@@ -4,7 +4,7 @@
 @theme {
   /* Define Montserrat for Headings */
   --font-montserrat: "Montserrat", sans-serif;
-  
+  --font-weight-medium: 550; /* Slightly heavier than standard 500 */
   /* Define System UI for Body */
   --font-ui-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -13,7 +13,6 @@
   html {
     font-family: var(--font-ui-sans);
     scroll-behavior: smooth;
-    /* text-align: justify; */
   }
 
 /* Force all headings to use Montserrat */

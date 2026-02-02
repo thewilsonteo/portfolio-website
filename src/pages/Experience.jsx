@@ -1,5 +1,5 @@
 // Experience.jsx
-import { Briefcase } from 'lucide-react';
+import { Briefcase, GraduationCap } from 'lucide-react';
 import TextFormatter from '../components/TextFormatter.jsx';
 
 const skillCategories = [
@@ -74,6 +74,38 @@ const timeline = [
       "Preserved marketing arms with reputable followings by producing deliverables at a consistent rate.",
     ],
   }
+];
+
+const education = [
+  {
+    degree: "Bachelor of Science - BS, Digital Media",
+    school: "Singapore of Social Sciences",
+    logo: "./suss.svg",
+    period: "2022 - 2026",
+    // desc: [
+    //   "Graduated with **Honors (GPA 3.8/4.0)**.",
+    //   "Specialized in **Software Engineering** and Data Structures.",
+    //   "Awarded 'Best Senior Project' for a React-based healthcare app."
+    // ]
+  },
+  {
+    degree: "Japanese Language Proficiency Test (N2)",
+    school: "The Japan Foundation",
+    logo: "./the-japan-foundation.svg",
+    period: "2022",
+  },
+  {
+    degree: "Associate UI/UX Designer",
+    school: "NTUC LearningHub",
+    logo: "./ntuc-learninghub.png",
+    period: "2020 - 2021",
+  },
+  {
+    degree: "Multimedia and Information Technology",
+    school: "Nanyang Polytechnic",
+    logo: "./nyp.png",
+    period: "2012 - 2015",
+  },
 ];
 
 export default function Experience() {
@@ -152,6 +184,52 @@ export default function Experience() {
                   {/* Using our Formatter Component */}
                   <div className="mt-4 text-justify">
                     <TextFormatter content={job.desc} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Education Section */}
+        <div className="max-w-3xl mx-auto px-4 mt-24">
+          <h3 className="text-2xl font-bold mb-12 flex items-center gap-3">
+            <GraduationCap className="text-blue-600" /> Education
+          </h3>
+          
+          <div className="relative border-l-2 border-gray-100 ml-4 md:ml-6 space-y-12">
+            {education.map((edu, index) => (
+              <div key={index} className="relative pl-10 md:pl-16">
+                
+                {/* School Logo Container */}
+                <div className="absolute -left-4.5 md:-left-6 top-0 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white border border-gray-100 shadow-sm z-10 overflow-hidden">
+                  {edu.logo ? (
+                    <img 
+                      src={edu.logo} 
+                      alt={edu.school} 
+                      className="w-full h-full object-contain p-1" 
+                    />
+                  ) : (
+                    <GraduationCap size={16} className="text-blue-600" />
+                  )}
+                </div>
+
+                {/* Content Card */}
+                <div className="group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                        {edu.degree}
+                      </h4>
+                      <p className="text-sm font-medium text-slate-500">{edu.school}</p>
+                    </div>
+                    <span className="inline-block px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 rounded-full w-fit">
+                      {edu.period}
+                    </span>
+                  </div>
+
+                  <div className="mt-4">
+                    <TextFormatter content={edu.desc} />
                   </div>
                 </div>
               </div>
